@@ -21,6 +21,8 @@ Source3:        %{dkms_name}-kmod-%{version}-aarch64.tar.xz
 Source4:        %{kmod_source}-%{version}.tar.xz
 
 BuildRequires:  sed
+BuildRequires: rpm-build
+BuildRequires: g++
 
 Conflicts:      kmod-nvidia-latest-dkms
 Provides:       nvidia-kmod = %{?epoch:%{epoch}:}%{version}

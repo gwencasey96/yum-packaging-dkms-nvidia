@@ -23,6 +23,10 @@ Source4:        %{kmod_source}-%{version}.tar.xz
 BuildRequires:  sed
 BuildRequires: rpm-build
 BuildRequires: g++
+BuildRequires: tar 
+BuildRequires: gzip 
+BuildRequires: zip 
+BuildRequires: bzip2
 
 Conflicts:      kmod-nvidia-latest-dkms
 Provides:       nvidia-kmod = %{?epoch:%{epoch}:}%{version}

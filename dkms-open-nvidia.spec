@@ -12,11 +12,10 @@ Epoch:          3
 License:        NVIDIA License
 URL:            http://www.nvidia.com/object/unix.html
 # Package is not noarch as it contains pre-compiled binary code
-ExclusiveArch:  x86_64 ppc64le aarch64
+ExclusiveArch:  x86_64 aarch64
 
 Source0:        dkms-nvidia.conf
 Source1:        %{dkms_name}-kmod-%{version}-x86_64.tar.xz
-Source2:        %{dkms_name}-kmod-%{version}-ppc64le.tar.xz
 Source3:        %{dkms_name}-kmod-%{version}-aarch64.tar.xz
 Source4:        %{kmod_source}-%{version}.tar.xz
 
@@ -52,11 +51,6 @@ rm -rf kernel-open
 
 %ifarch x86_64
 %setup -q -T -b 1 -n %{dkms_name}-kmod-%{version}-x86_64
-cp -f %{SOURCE0} kernel-open/dkms.conf
-%endif
-
-%ifarch ppc64le
-%setup -q -T -b 2 -n %{dkms_name}-kmod-%{version}-ppc64le
 cp -f %{SOURCE0} kernel-open/dkms.conf
 %endif
 
